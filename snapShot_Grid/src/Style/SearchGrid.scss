@@ -1,0 +1,65 @@
+.OuterContainer {
+  margin: 4px;
+
+  .header {
+    font-size: 26px;
+    font-family: serif;
+    display: flex;
+    align-items: center;
+  }
+  .inputContainer {
+    display: flex;
+    margin-top: 16px;
+    .searchContainer {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      input {
+        border-radius: 6px;
+        border-color: grey;
+        padding: 8px;
+      }
+      button {
+        border-radius: 6px;
+        border: 2px solid rgb(101, 166, 3);
+        background-color: aquamarine;
+        font-size: 14px;
+        padding: 8px 6px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .displayContainer {
+    margin-top: 24px;
+    h3 {
+      font-size: 16px;
+    }
+  }
+}
+
+// ImageGrid
+
+.imageContainer {
+  margin: 16px;
+  .imageGridContainer {
+    width: 871px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    .indiContainer {
+      img {
+        cursor: pointer;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .noGrid {
+    h4 {
+      font-size: 18px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
+}
