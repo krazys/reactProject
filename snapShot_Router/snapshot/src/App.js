@@ -14,7 +14,7 @@ function App() {
    
 <div className="routePath">
 <Routes>
-  <Route  path="/" element={ <SearchGrid/>}/>
+  <Route exact path="/" element={ <SearchGrid/>}/>
       <Route path="/Mountain" element={<PreDefinedGrid textValue="mountain"/>}/>
       <Route path="/Beaches" element={<PreDefinedGrid textValue="beaches"/> }/>
       <Route path="/Bird" element={<PreDefinedGrid textValue="bird"/>}/>
