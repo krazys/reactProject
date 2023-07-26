@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+.homeWrapperContainer{
+    hr{
+        color: grey;
+        margin-block-start: unset;
+        margin-block-end: unset;
+    }
+}

@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.trendingSection{
+    background-color: aliceblue;
+    padding: 24px 0;
+
+    h4{
+        font-size: 24px;
+        color: #2fb1aa;
+        font-family: $primary-font;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        padding-left: 24px;
+        margin-bottom: 0.5em;
+    }
+}
