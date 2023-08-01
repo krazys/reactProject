@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { img_300 } from '../config/config';
 import '../../styles/movieBlock.scss';
 import Carousel, { CarouselItem } from './Carousel';
 import ModalInfoView from './ModalInfoView';
+import {movieDetails } from './ApiCallService';
+import axios from 'axios';
 
 interface fetchedDataResponse {
     title: string,
@@ -16,6 +18,20 @@ interface fetchedDataResponse {
     name: string,
     id: number,
     genre_ids: Array<number>,
+    popularity:number,
+    vote_count:number,
+}
+
+interface modalDetailedInfoResponse {
+    genres: Array<object>,
+    imdb_id: string,
+    revenue: number,
+    runtime: number,
+    status: string,
+    tagline: string,
+    videos: any,
+    number_of_seasons:number,
+    number_of_episodes:number,
 }
 
 type TrendingBlockProps = {
@@ -25,6 +41,7 @@ const TrendingBlock: React.FC<TrendingBlockProps> = ({ fetchedData }) => {
 
     const [modalopen, setModalOpen] = useState<boolean>(false);
     const [modalInfoData, setModalInfoData] = useState<fetchedDataResponse>()
+    const [modalDetailedInfo, setModalDetailedInfo] = useState<modalDetailedInfoResponse>()
 
     let groupedItems:any= [];
     let elementsPerSlide = 4;
@@ -42,12 +59,40 @@ const TrendingBlock: React.FC<TrendingBlockProps> = ({ fetchedData }) => {
         return x;
     };
 
+    const movieDetails = async (modalInfoData:any)=>{
+
+        try{
+            console.log(modalInfoData.id, modalInfoData.media_type)
+    let response = await axios.get(`https://api.themoviedb.org/3/${modalInfoData.media_type}/${modalInfoData.id}?api_key=3e85d84a2d3e58168179cf80ecdecea5&append_to_response=videos`)
+    console.log(response )
+    setModalDetailedInfo(response?.data);
+    // setTimeout(()=>{
+    //     setModalDetailedInfo(response?.data);
+    // }, 2000)
+    
+        } catch (error){
+    console.log(error)
+        }
+    }
+
     const openmoreInfoModal = (index:number, indexInner: number) => {
+       
         setModalOpen(!modalopen);
         console.log("NUM",index, indexInner);
         setModalInfoData(groupedItems[index][indexInner]);
         
+      
+        
+    }
 
+    useEffect( ( )=>{
+        movieDetails(modalInfoData);
+
+       }, [modalInfoData])
+
+    const closemoreInfoModal = () => {
+        setModalOpen(!modalopen);
+        console.log("Callback function executed!");
     }
     console.log("D", modalInfoData)
 
@@ -92,7 +137,9 @@ const TrendingBlock: React.FC<TrendingBlockProps> = ({ fetchedData }) => {
                 }
 
                 {modalopen && modalInfoData !== undefined &&
-                    <ModalInfoView modalInfoData={modalInfoData} />
+                    <ModalInfoView modalInfoData={modalInfoData} 
+                    closemoreInfoModal={closemoreInfoModal}
+                    modalDetailedInfo={modalDetailedInfo}/>
                 }
             </div>
         </div>

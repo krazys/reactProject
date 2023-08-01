@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/trendingSection.scss';
 import axios from 'axios';
 import TrendingBlock from './TrendingBlock';
+import { Link} from 'react-router-dom';
+import { AiOutlineDoubleRight} from "react-icons/ai";
 
 
 interface fetchedDataResponse {
@@ -16,6 +18,8 @@ interface fetchedDataResponse {
     name:string,
     id: number,
     genre_ids: Array<number>,
+    popularity:number, 
+    vote_count:number,
 }
 
 const TrendingMovies = () => {
@@ -43,7 +47,8 @@ const TrendingMovies = () => {
 
     return (
         <div className='trendingSection'>
-            <h4> Trending Movies</h4>
+               <div className='linkSection'><h4> Trending Movies</h4>
+           <Link to='/movie' ><button>Explore Movies <AiOutlineDoubleRight/></button></Link></div>
             <div className='movieBlock'>
                 <TrendingBlock fetchedData={fetchedData}/>
             </div>
