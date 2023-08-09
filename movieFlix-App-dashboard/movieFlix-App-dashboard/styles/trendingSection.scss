@@ -1,0 +1,53 @@
+@import './variables.scss';
+
+.trendingSection {
+    background-color: aliceblue;
+    padding: 24px 0;
+
+    .linkSection {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+
+        margin-bottom: 0.5em;
+
+        h4 {
+            font-size: 24px;
+            color: #2fb1aa;
+            // font-family: $primary-font;
+            margin-block-start: unset;
+            margin-block-end: unset;
+            padding-left: 24px;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            display: inline-block;
+            font-size: .9vw;
+            // line-height: .8vw;
+            margin-right: 4px;
+            max-width: 0;
+            opacity: 0;
+            font-weight: 600;
+            vertical-align: bottom;
+            white-space: nowrap;
+            color: #54b9c5;
+            transition: max-width 1s, opacity 1s, transform .75s;
+            @include respond(mobile){
+                opacity: 1;
+                font-size: 2.9vw;
+            }
+        }
+
+        &:hover {
+            button {
+                opacity: 1;
+            }
+        }
+    }
+
+
+}

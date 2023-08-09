@@ -1,0 +1,36 @@
+$primary-bg-color: #fff;
+$primary-font : "Poppins", sans-serif;
+$secondary-font: "Open_Sans", sans-serif;
+$muted-font-color: #52556e;
+$font-color-dark: #21243d;
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin respond($breakpoint){
+  
+    @if $breakpoint==desktop {
+        @media (min-width: 1441px) and (max-width: 1920px){
+            @content;
+        }
+    }
+    @if $breakpoint==tablet {
+        @media (min-width: 485px) and (max-width: 1024px){
+            @content;
+        }
+    }
+    @if $breakpoint==mobile {
+        @media screen and (max-width:484px){
+            @content;
+        }
+    }
+}

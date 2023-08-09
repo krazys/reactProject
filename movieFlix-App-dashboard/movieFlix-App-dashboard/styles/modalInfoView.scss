@@ -1,0 +1,208 @@
+@import './variables.scss';
+
+.modalOuterWrapper {
+
+  position: fixed;
+  /* Stay in place */
+  z-index: 5;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+
+  .innerContainer {
+    background-color: #181818;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+
+
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+
+    border-radius: 6px;
+
+    font-size: 16px;
+    width: 850px;
+    @include respond(mobile){
+      width: 80%;
+    }
+
+    .videoSection{
+      padding: 12px 12px;
+      p{
+        font-weight: 600;
+        color: #ece9e9;
+        text-align: center;
+      }
+
+    }
+    .movieInfoSection {
+
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      gap: 12px;
+      @include respond(mobile){
+        flex-direction: column;
+      }
+
+      .leftSection {
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+        width: 75%;
+        @include respond(mobile){
+          width: 100%;
+        }
+
+        h3 {
+          font-size: 24px;
+          color: #fff;
+          margin-block-start: unset;
+          margin-block-end: unset;
+          font-family:$primary-font
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 26px;
+          font-family:$primary-font
+        }
+        p:nth-child(3){
+          font-size: 14px;
+          font-weight: 600;
+          font-family: $secondary-font;
+          font-style: italic;
+        }
+
+        font-size: 20px;
+        .stream{
+          font-family: $secondary-font;
+          display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: unset;
+          h3{
+            font-size: 16px;
+           
+            color: #ece9e9;
+          }
+          h4{
+            font-size: 12px;
+            font-family: $secondary-font;
+            margin-block-start: unset;
+            margin-block-end: unset;
+            padding-bottom: 0.6em;
+          }
+          p{
+            font-size: 12px;
+            margin-block-start: unset;
+            margin-block-end: unset;
+          }
+          .serviceProviderOuter{
+            display: flex;
+            gap:12px;
+            flex-direction: row;
+            
+            flex-wrap: wrap;
+          .serviceProvider{
+            display: flex;
+            flex-direction: column-reverse;
+            gap:4px;
+            align-items: center;
+         
+            p{
+              font-size: 10px;
+              font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin-block-start: unset;
+    margin-block-end: unset;
+            }
+            img{
+              border-radius: 6px;
+            }
+          }
+        }
+          
+        }
+      }
+
+      .rightSection {
+        // width:65%;
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+
+        span {
+          color: #777;
+          word-break: break-word;
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        ul {
+          list-style: none;
+          @include respond(mobile){
+            margin-block-start:unset;
+            margin-block-end:unset;
+            padding-inline-start:unset;
+          }
+
+          li {
+            margin: 0.5em 0.5em 0.5em 0;
+            word-break: break-word;
+          }
+
+          .genres {
+            color: #fff;
+          }
+        }
+      }
+      .personDetails{
+        display: flex;gap:12px;
+        span {
+          color: #777;
+          word-break: break-word;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        h3{
+          font-size: 16px;
+           
+          color: #ece9e9;
+        }
+        p{
+          font-size: 12px;
+          margin-block-start: unset;
+          margin-block-end: unset;
+        }
+      }
+    }
+
+
+  
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #ece9e9;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,91 @@
+@import './variables.scss';
+
+.resultsWrapper {
+    background-color: #3e3e3e;
+    opacity: 2;
+    position: absolute;
+    width: 99%;
+
+    @include respond(mobile){
+    width: 95%;
+    }
+    .innerWrapper {
+        padding: 4px 12px;
+        margin-top: 76px;
+    @include respond(mobile){
+        width:97%;
+        margin-top: 26px;
+    }
+
+        h3 {
+            font-size: 24px;
+            font-family: $secondary-font;
+            margin-block-start: unset;
+            margin-block-end: unset;
+            text-align: center;
+            color: #eceaea;
+        }
+
+        .resultsContainer {
+
+           padding: 16px 10px;
+            .resultsList {
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+                flex-wrap: wrap;
+
+                .resultListIndividulaElem {
+                    border-radius: 6px;
+                    background-color: #ffffff;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 22px;
+                    padding: 12px;
+                    width: 320px;
+                    align-items: center;
+                    cursor: pointer;
+                    @include respond(mobile){
+                        width: 340px;
+                    }
+
+                    .leftSection {
+                        img {
+                            border-radius: 12px;
+                        }
+                    }
+
+                    .rightSection {
+                        display: flex;
+                        gap: 6px;
+                        flex-direction: column;
+
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: #21243d;
+                        }
+
+                        p {
+                            span {
+                                color: #777;
+                            }
+
+                            margin-block-start: unset;
+                            margin-block-end: unset;
+                            font-size: 12px;
+                            color: #21243d;
+
+                        }
+                    }
+                }
+            }
+
+            .errorMessage {
+                text-align: center;
+                font-weight: 600;
+                font-style: 18ex;
+            }
+        }
+    }
+}

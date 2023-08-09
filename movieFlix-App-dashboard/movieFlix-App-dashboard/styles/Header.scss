@@ -1,0 +1,141 @@
+@import './variables.scss';
+
+.outerContainer {
+
+    background-color: aliceblue;
+    width: 100%;
+
+    .navigation {
+        @include flex-between;
+        flex-direction: row;
+        padding: 12px 48px;
+        color: $font-color-dark;
+        height: 56px;
+        position: relative;
+
+        @include respond(mobile) {
+            padding: 4px 16px;
+        }
+
+        .logo {
+            padding: 8px 0;
+            a{
+                font-size: 50px;
+            }
+        }
+        .leftSection {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 28px;
+            @include respond(mobile) {
+                gap:70px;
+            }
+        .searchBarSection{
+            // position: relative;
+            button{
+                border: none;
+                background-color: transparent;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        .hamBurger {
+            display: none;
+
+            @include respond(mobile) {
+                display: block;
+                border: 0;
+                height: 40px;
+                width: 40px;
+                padding: 0.5rem;
+                border-radius: 50%;
+                background-color: #283b8b;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out;
+                position: absolute;
+                top: 47%;
+                right: 25px;
+                transform: translateY(-50%);
+
+                &:hover {
+                    background-color: #2642af;
+                }
+            }
+        }
+
+        .nav-menu {
+            display: block;
+
+            .buttonWrapper {
+                display: flex;
+                gap: 18px;
+
+                li {
+                    list-style: none;
+
+                    button {
+                        font-family: $primary-font;
+                        border-radius: 0.25rem;
+                        border: none;
+                        padding: 0.25rem 1rem;
+                        font-size: 0.875rem;
+                        cursor: pointer;
+                        font-weight: 500;
+                    }
+                }
+
+                .signIn {
+                    background-color: rgba(236, 14, 25, 0.961);
+                    color: $primary-bg-color;
+                }
+
+                .login {
+                    background-color: rgba(14, 151, 236, 0.961);
+                    color: $primary-bg-color;
+                }
+            }
+
+            @include respond(mobile) {
+                &.expanded {
+                    background-color: transparent;
+                    // position: relative;
+                    top: 28%;
+                    display: block;
+                    width: 100%;
+
+                    .buttonWrapper {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                    }
+                }
+
+                .buttonWrapper {
+                    flex-direction: column;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: calc(32vh - 60px);
+                    background-color: #f6fbff;
+                    border-top: 1px solid rgb(198, 196, 196);
+                    display: none;
+                    margin: unset;
+                    margin-block-start:unset;
+                    margin-block-end: unset;
+                    padding-inline-start:unset;
+                    top: 99%;
+                    z-index: 1;
+
+                    li {
+                        text-align: center;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    }
+}

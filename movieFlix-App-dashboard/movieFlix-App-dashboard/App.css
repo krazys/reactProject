@@ -1,0 +1,23 @@
+body, html{
+    font-family: "Poppins", sans-serif;
+    font-family: "Open_Sans", sans-serif;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins'), url(../styles/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 900;
+    src: local('Poppins'), url(../styles/fonts/Poppins/Poppins-Bold.ttf)
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 900;
+    src: local('Poppins'), url(../styles/fonts/Poppins/Poppins-Black.ttf)
+}
+
+@font-face {
+    font-family: 'Open_Sans';
+    src: local('Open_Sans'), url(../styles/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
